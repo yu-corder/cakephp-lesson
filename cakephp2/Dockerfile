@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) intl \
     && docker-php-ext-install -j$(nproc) pdo_pgsql
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN docker-php-ext-install pdo_mysql mysqli
 COPY . /var/www/html
 ENV COMPOSER_ALLOW_SUPERUSER 1
 COPY --from=composer /usr/bin/composer /usr/bin/composer

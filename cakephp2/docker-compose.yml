@@ -4,11 +4,14 @@ services:
     build: .
     volumes:
       - ./web:/var/www/html/cake_starter
+      - ./php/php.ini:/usr/local/etc/php/php.ini
     tty: true
     ports:
      - 80:80
   mysql:
     image: mysql:5.7
+    volumes:
+      - db-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: cakelesson2
@@ -18,3 +21,7 @@ services:
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --explicit_defaults_for_timestamp=1
     ports:
       - 3306:3306
+
+volumes:
+  db-data:
+    external: false

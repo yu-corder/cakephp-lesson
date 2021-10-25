@@ -269,7 +269,7 @@ return [
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
              * the following line and set the port accordingly
              */
-            //'port' => 'non_standard_port_number',
+            'port' => '3306',
             /*
              * It is recommended to set these options through your environment or app_local.php
              */
@@ -304,7 +304,7 @@ return [
              */
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
 
-            'url' => env('DATABASE_URL', null),
+            //'url' => env('DATABASE_URL', null),
         ],
 
         /*
@@ -315,7 +315,7 @@ return [
             'driver' => Mysql::class,
             'persistent' => false,
             'host' => 'mysql',
-            //'port' => 'non_standard_port_number',
+            'port' => '3306',
             'username' => 'docker',
             'password' => 'docker',
             'database' => 'cakelesson2',
@@ -325,7 +325,7 @@ return [
             'quoteIdentifiers' => false,
             'log' => false,
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
-            'url' => env('DATABASE_TEST_URL', null),
+            //'url' => env('DATABASE_TEST_URL', null),
         ],
     ],
 
