@@ -21,6 +21,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="<?= $this->request->getParam('_csrfToken') ?>">
     <title>
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
@@ -29,6 +30,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->script('/plugins/jquery/jquery-3.6.0.min') ?>
+    <?=$this->Html->script('people') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

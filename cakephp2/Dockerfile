@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libpq-dev \
     && docker-php-ext-install -j$(nproc) intl \
-    && docker-php-ext-install -j$(nproc) pdo_pgsql
+    && docker-php-ext-install -j$(nproc) pdo_pgsql 
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN docker-php-ext-install pdo_mysql mysqli
 COPY . /var/www/html
