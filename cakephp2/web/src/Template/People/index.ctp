@@ -14,16 +14,19 @@
         <tr>
             <th>id</th>
             <th>name</th>
-            <th>mail</th>
-            <th>age</th>
+            <th>messages</th>
+            <th></th>
         </tr>
     </thead>
     <?php foreach ($data->toArray() as $obj) :?>
         <tr class="obj-<?=$obj->id ?>" data-name="taro">
             <td><?=h($obj->id) ?></td>
             <td><a href="<?=$this->Url->build(['controller'=>'People', 'action'=>'edit']); ?>?id=<?=$obj->id ?>"><?=h($obj->name) ?></a></td>
-            <td><?=h($obj->mail) ?></td>
-            <td><?=h($obj->age) ?></td>
+            <td>
+                <?php foreach ($obj->messages as $item): ?>
+                    "<?= h($item->message) ?>"<br>
+                <?php endforeach; ?>
+            </td>
             <td class="delete-click" data-num="<?=$obj->id ?>">delete</td>
         </tr>
     <?php endforeach; ?>
